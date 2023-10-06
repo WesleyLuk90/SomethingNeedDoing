@@ -62,7 +62,7 @@ internal class TargetCommand : MacroCommand
         if (target == default)
             throw new MacroCommandError("Could not find target");
 
-        Service.TargetManager.SetTarget(target);
+        Service.TargetManager.Target = target;
 
         await this.PerformWait(token);
     }

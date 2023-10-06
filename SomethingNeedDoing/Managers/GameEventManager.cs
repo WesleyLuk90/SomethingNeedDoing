@@ -3,6 +3,7 @@ using System.Threading;
 
 using Dalamud.Hooking;
 using Dalamud.Logging;
+using Dalamud.Plugin.Services;
 using Dalamud.Utility.Signatures;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using SomethingNeedDoing.CraftingData;
@@ -21,9 +22,10 @@ internal class GameEventManager : IDisposable
     /// <summary>
     /// Initializes a new instance of the <see cref="GameEventManager"/> class.
     /// </summary>
-    public GameEventManager()
+    public GameEventManager(IGameInteropProvider gameInteropProvider)
     {
-        SignatureHelper.Initialise(this);
+        gameInteropProvider.InitializeFromAttributes(this);
+        // SignatureHelper.Initialise(this);
         this.eventFrameworkHook.Enable();
     }
 
