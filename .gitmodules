@@ -1,3 +1,5 @@
 [submodule "lib/ClickLib"]
 	path = lib/ClickLib
 	url = https://github.com/daemitus/ClickLib.git
+[submodule ".\\lib\\ClickLib\\"]
+	url = git@github.com:WesleyLuk90/ClickLib.git
